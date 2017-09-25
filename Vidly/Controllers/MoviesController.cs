@@ -44,16 +44,16 @@ namespace Vidly.Controllers
         [Authorize(Roles = RoleName.Admin)]
         public ActionResult Save(Movie movie, HttpPostedFileBase imageFile)
         {
-            if (!ModelState.IsValid)
-            {
-                var viewModel = new MovieFormViewModel
-                {
-                    Movie = movie,
-                    Genres = _context.Genres.ToList()
-                };
+            //if (!ModelState.IsValid)
+            //{
+            //    var viewModel = new MovieFormViewModel
+            //    {
+            //        Movie = movie,
+            //        Genres = _context.Genres.ToList()
+            //    };
 
-                return View("MovieForm", viewModel);
-            }
+            //    return View("MovieForm", viewModel);
+            //}
 
             if (movie.Id == 0)
             {
