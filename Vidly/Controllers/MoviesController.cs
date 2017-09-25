@@ -58,7 +58,8 @@ namespace Vidly.Controllers
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
-                movie.MovieImageId = CreateMovieImage(imageFile);
+                movie.MovieImage = CreateMovieImage(imageFile);
+                movie.MovieImageId = movie.MovieImage.Id;
                 _context.Movies.Add(movie);
             }
             else
@@ -115,7 +116,7 @@ namespace Vidly.Controllers
             return View("Description", viewModel);
         }
 
-        private int CreateMovieImage(HttpPostedFileBase imageFile)
+        private MovieImage CreateMovieImage(HttpPostedFileBase imageFile)
         {
             var movieImage = new MovieImage();
 
@@ -130,7 +131,7 @@ namespace Vidly.Controllers
 
             _context.Entry(movieImage).GetDatabaseValues();
 
-            return movieImage.Id;
+            return movieImage;
 
         }
 
