@@ -100,6 +100,8 @@ namespace Vidly.Controllers
 
         public ActionResult Description(int id)
         {
+            // создать модель пользователя, содержащая имя пользователя и фильм который он открыл
+
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
             var movieImage = _context.MovieImages.Single(m => m.Id == movie.MovieImageId);
 

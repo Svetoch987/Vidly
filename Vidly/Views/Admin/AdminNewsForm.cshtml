@@ -1,0 +1,28 @@
+﻿@model Vidly.Models.AdminNews
+@{
+    ViewBag.Title = "Admin panel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Save", "Admin", FormMethod.Post))
+{
+    <div class="adminForm">
+        
+        <h2>Admin Panel</h2>
+        <div class="form-group">
+            @Html.LabelFor(n => n.Name)
+            @Html.TextBoxFor(n => n.Name, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(n => n.Description)
+            @Html.TextAreaFor(n => n.Description, new { @class = "form-control", @rows = 5 })
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+
+    @Html.Hidden("AdminNews.Id", (Model != null) ? Model.Id : 0)
+    @Html.HiddenFor(n => n.Id)
+    @Html.AntiForgeryToken()
+}

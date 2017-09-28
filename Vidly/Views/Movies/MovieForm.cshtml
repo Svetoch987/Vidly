@@ -1,5 +1,4 @@
-﻿@using System.Diagnostics.Eventing.Reader
-@model Vidly.ViewModels.MovieFormViewModel
+﻿@model Vidly.ViewModels.MovieFormViewModel
 @{
     ViewBag.Title = "MovieForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,13 +8,10 @@
     string imageUrl = "http://www.asms.ru/bitrix/templates/main/images/nophoto.png";
     if (Model.MovieImage != null)
     {
-        imageUrl = "";
         base64String = Convert.ToBase64String(Model.MovieImage.Image, 0, Model.MovieImage.Image.Length);
         imageUrl = "data:image/png;base64," + base64String;
     }
 }
-
-
 
 @using (Html.BeginForm("Save", "Movies", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

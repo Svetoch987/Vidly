@@ -238,6 +238,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
     <Compile Include="Controllers\Api\NewRentalsController.cs" />
@@ -246,6 +247,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\RentalsController.cs" />
+    <Compile Include="Dtos\AdminNewsDto.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
@@ -416,8 +418,13 @@
     <Compile Include="Migrations\201709250638565_FillMovies.Designer.cs">
       <DependentUpon>201709250638565_FillMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709271342535_AddAdminNewsTable.cs" />
+    <Compile Include="Migrations\201709271342535_AddAdminNewsTable.Designer.cs">
+      <DependentUpon>201709271342535_AddAdminNewsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminNews.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -705,10 +712,11 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
-    <Content Include="Views\Rentals\New.cshtml" />
+    <Content Include="Views\Rentals\RentalForm.cshtml" />
     <Content Include="Views\Customers\ReadOnlyList.cshtml" />
     <Content Include="Views\Movies\Description.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\Admin\AdminNewsForm.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -844,6 +852,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709250638565_FillMovies.resx">
       <DependentUpon>201709250638565_FillMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709271342535_AddAdminNewsTable.resx">
+      <DependentUpon>201709271342535_AddAdminNewsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
